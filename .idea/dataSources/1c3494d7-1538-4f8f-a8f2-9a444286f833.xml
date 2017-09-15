@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="wbglxt@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="wbglxt">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="db_database10"/>
+    <schema id="4" parent="1" name="db_database12"/>
+    <schema id="5" parent="1" name="db_database14"/>
+    <schema id="6" parent="1" name="db_database16"/>
+    <schema id="7" parent="1" name="db_database17"/>
+    <schema id="8" parent="1" name="information_schema"/>
+    <schema id="9" parent="1" name="mysql"/>
+    <schema id="10" parent="1" name="performance_schema"/>
+    <schema id="11" parent="1" name="ssh"/>
+    <schema id="12" parent="1" name="ssh_employee"/>
+    <schema id="13" parent="1" name="testforlaop"/>
+    <schema id="14" parent="1" name="testlogin"/>
+    <table id="15" parent="2" name="focus"/>
+    <table id="16" parent="2" name="microblog"/>
+    <table id="17" parent="2" name="review"/>
+    <table id="18" parent="2" name="user"/>
+    <column id="19" parent="15" name="fid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="20" parent="15" name="uid">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="21" parent="15" name="sid">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="22" parent="15" name="FK5D154D85461AE2E">
+      <ColNames>sid</ColNames>
+    </index>
+    <index id="23" parent="15" name="FK5D154D85461B5B0">
+      <ColNames>uid</ColNames>
+    </index>
+    <key id="24" parent="15" name="PRIMARY">
+      <ColNames>fid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="25" parent="15" name="FK5D154D85461B5B0">
+      <ColNames>uid</ColNames>
+      <RefSchemaName>wbglxt</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>uid</RefColNames>
+    </foreign-key>
+    <foreign-key id="26" parent="15" name="FK5D154D85461AE2E">
+      <ColNames>sid</ColNames>
+      <RefSchemaName>wbglxt</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>uid</RefColNames>
+    </foreign-key>
+    <column id="27" parent="16" name="mid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="28" parent="16" name="mtime">
+      <Position>2</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="29" parent="16" name="mcontent">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="30" parent="16" name="mstate">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="31" parent="16" name="uid">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="32" parent="16" name="FKFA5A6C665461B5B0">
+      <ColNames>uid</ColNames>
+    </index>
+    <key id="33" parent="16" name="PRIMARY">
+      <ColNames>mid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="34" parent="16" name="FKFA5A6C665461B5B0">
+      <ColNames>uid</ColNames>
+      <RefSchemaName>wbglxt</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>uid</RefColNames>
+    </foreign-key>
+    <column id="35" parent="17" name="cid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="36" parent="17" name="mid">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="37" parent="17" name="uid">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="38" parent="17" name="ctime">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="39" parent="17" name="ccontent">
+      <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="40" parent="17" name="cstate">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="41" parent="17" name="FKC84EF7585461B5B0">
+      <ColNames>uid</ColNames>
+    </index>
+    <key id="42" parent="17" name="PRIMARY">
+      <ColNames>cid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="43" parent="17" name="FKC84EF7585461B5B0">
+      <ColNames>uid</ColNames>
+      <RefSchemaName>wbglxt</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>uid</RefColNames>
+    </foreign-key>
+    <column id="44" parent="18" name="uid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="45" parent="18" name="username">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="18" name="password">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="18" name="upname">
+      <Position>4</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="18" name="uname">
+      <Position>5</Position>
+      <DataType>varchar(8)|0</DataType>
+    </column>
+    <column id="49" parent="18" name="usex">
+      <Position>6</Position>
+      <DataType>varchar(2)|0</DataType>
+    </column>
+    <column id="50" parent="18" name="uage">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="51" parent="18" name="uemail">
+      <Position>8</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="52" parent="18" name="utel">
+      <Position>9</Position>
+      <DataType>varchar(11)|0</DataType>
+    </column>
+    <column id="53" parent="18" name="uauth">
+      <Position>10</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="54" parent="18" name="ustate">
+      <Position>11</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="55" parent="18" name="PRIMARY">
+      <ColNames>uid</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

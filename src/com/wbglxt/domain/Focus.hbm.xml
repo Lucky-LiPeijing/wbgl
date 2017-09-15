@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.wbglxt.domain">
+    <class name="Focus" table="focus">
+        <id name="fid" column="fid">
+            <generator class="native" />
+        </id>
+        <property name="uid" column="uid" />
+        <property name="sid" column="sid" />
+
+        <!-- 关联关系映射 -->
+        <!--<many-to-one name="uid" class="com.wbglxt.domain.User" />-->
+        <!--<many-to-one name="mid" class="com.wbglxt.domain.Microblog" />-->
+    </class>
+</hibernate-mapping>

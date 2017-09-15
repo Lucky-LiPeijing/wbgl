@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.wbglxt.domain">
+    <class name="User" table="user">
+        <id name="uid" column="uid">
+            <generator class="native" />
+        </id>
+        <property name="username" column="username" length="20" />
+        <property name="password" column="password" length="20" />
+        <property name="upname" column="upname" length="10" />
+        <property name="uname" column="uname" length="8" />
+        <property name="usex" column="usex" length="2" />
+        <property name="uage" column="uage" />
+        <property name="uemail" column="uemail" length="10" />
+        <property name="utel" column="utel" length="11" />
+        <property name="uauth" column="uauth" />
+        <property name="ustate" column="ustate" />
+
+        <!-- 关联关系映射 -->
+        <set name="microblogs" cascade="delete" inverse="true">
+            <key column="uid"></key>
+            <one-to-many class="com.wbglxt.domain.Microblog" />
+        </set>
+
+        <set name="reviews" cascade="delete" inverse="true">
+            <key column="uid"></key>
+            <one-to-many class="com.wbglxt.domain.Review" />
+        </set>
+
+        <set name="focusSet" cascade="delete" inverse="true">
+            <key column="uid"></key>
+            <one-to-many class="com.wbglxt.domain.Focus" />
+        </set>
+
+        <set name="foci" cascade="delete" inverse="true">
+            <key column="sid"></key>
+            <one-to-many class="com.wbglxt.domain.Focus" />
+        </set>
+    </class>
+</hibernate-mapping>

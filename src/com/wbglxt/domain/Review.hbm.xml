@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.wbglxt.domain">
+    <class name="Review" table="review">
+        <id name="cid" column="cid">
+            <generator class="native" />
+        </id>
+        <property name="mid" column="mid" />
+        <property name="uid" column="uid" />
+        <property name="ctime" column="ctime"  />
+        <property name="ccontent" column="ccontent" length="50" />
+        <property name="cstate" column="cstate" />
+
+
+        <!-- 关联关系映射 -->
+        <!--<many-to-one name="uid" class="com.wbglxt.domain.User" />-->
+        <!--<many-to-one name="mid" class="com.wbglxt.domain.Microblog" />-->
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="ssh" extends="struts-default" namespace="/">
+		<action name="user_*" class="userAction" method="{1}">
+			<result name="input" type="redirect">/loginPage/error.jsp</result>
+			<result name="success" type="redirect">/index.jsp</result>
+			<result name="saveSuccess" type="redirect">/loginPage/success.jsp</result>
+			<result name="adminSave" type="redirect">/adminPage/user/listAllUser.jsp</result>
+			<!--<result name="saveFails" type="redirect">/loginPage/error.jsp</result>-->
+			<result name="findAll">/adminPage/user/listAllUser.jsp</result>
+			<result name="saveUI">/adminPage/user/addUser.jsp</result>
+			<result name="editSuccess">/adminPage/user/editUser.jsp</result>
+			<result name="updateSuccess" type="redirectAction">user_findAll.action</result>
+			<result name="deleteSuccess" type="redirectAction">user_findAll.action</result>
+			<result name="admin" type="redirect">/adminPage/admin.jsp</result>
+		</action>
+
+		<action name="microblog_*" class="microblogAction" method="{1}">
+			<result name="findAll">/adminPage/microblog/listAllMicroblog.jsp</result>
+			<result name="findHome">/index.jsp</result>
+			<result name="deleteSuccess" type="redirectAction">microblog_findAll.action</result>
+			<result name="findSuccess">/mood.jsp</result>
+			<result name="deleteByUidSuccess" type="redirect">/mood.jsp</result>
+			<result name="saveSuccess" type="redirect">/index.jsp</result>
+			<result name="copySuccess" type="redirect">/index.jsp</result>
+		</action>
+
+		<action name="review_*" class="reviewAction" method="{1}">
+			<result name="findAll">/adminPage/review/listAllReview.jsp</result>
+			<result name="mfindAll">/adminPage/review/addReview.jsp</result>
+			<result name="deleteSuccess" type="redirectAction">review_findAll.action</result>
+			<result name="saveUI">/adminPage/review/addReview.jsp</result>
+			<result name="saveSuccess" type="redirect">/index.jsp</result>
+		</action>
+
+		<action name="focus_*" class="focusAction" method="{1}">
+			<result name="findAll">/adminPage/focus/listAllFocus.jsp</result>
+			<result name="userFindAll">/article.jsp</result>
+			<result name="deleteSuccess" type="redirectAction">focus_findAll.action</result>
+			<result name="saveUI">/adminPage/focus/addFocus.jsp</result>
+			<result name="saveSuccess" type="redirect">/index.jsp</result>
+		</action>
+	</package>
+   
+</struts>
